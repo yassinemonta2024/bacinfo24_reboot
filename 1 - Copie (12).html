@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Video</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #3f0358; /* Set background color */
+    }
+    body {
+        display: contents;
+        justify-content: stretch;
+        align-items: center;
+        background-color: #3f0358; /* Set background color */
+    }
+    video {
+        position: relative; /* Fixed position */
+        width: 100%; /* Make the video width 100% of viewport */
+        min-height: 100%; /* Minimum height of 100% */
+        scrollbar-width: 10px ;
+        scrollbar-color: #3f0358 black;
+    }
+</style>
+</head>
+<body>
+    <video autoplay playsinline loop>
+        <source src="source/chikaa.mp4" type="video/mp4">
+        <!-- Provide fallback content if the browser doesn't support the video -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Your other content goes here -->
+    <div style="position: relative; z-index: 1;">
+        <!-- Your page content -->
+    </div>
+</body>
+</html>
+
