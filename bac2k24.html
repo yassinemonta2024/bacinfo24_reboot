@@ -333,6 +333,19 @@
                     item.classList.add("is-visible");
                 });
             } else if ("IntersectionObserver" in window) {
+                function revealVisibleSections() {
+                    revealItems.forEach(function (item) {
+                        if (item.classList.contains("is-visible")) {
+                            return;
+                        }
+
+                        var rect = item.getBoundingClientRect();
+                        if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+                            item.classList.add("is-visible");
+                        }
+                    });
+                }
+
                 var revealObserver = new IntersectionObserver(function (entries, observer) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
@@ -340,11 +353,18 @@
                             observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.2 });
+                }, {
+                    threshold: 0.01,
+                    rootMargin: "0px 0px -8% 0px"
+                });
 
                 revealItems.forEach(function (item) {
                     revealObserver.observe(item);
                 });
+
+                revealVisibleSections();
+                window.addEventListener("scroll", revealVisibleSections, { passive: true });
+                window.addEventListener("resize", revealVisibleSections);
             } else {
                 revealItems.forEach(function (item) {
                     item.classList.add("is-visible");
