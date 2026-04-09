@@ -630,6 +630,7 @@ button {
     height: 100%;
     object-fit: contain;
     padding: 1rem;
+    cursor: zoom-in;
 }
 
 .carousel-slide::after {
@@ -718,9 +719,120 @@ button {
     border-radius: var(--radius-sm);
     object-fit: contain;
     padding: 0.75rem;
+    cursor: zoom-in;
     background:
         radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%),
         rgba(13, 10, 20, 0.78);
+}
+
+.lightbox-open {
+    overflow: hidden;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 3, 9, 0.88);
+    backdrop-filter: blur(18px);
+}
+
+.lightbox-shell {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 90rem);
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(15, 11, 23, 0.92), rgba(9, 7, 16, 0.92));
+    box-shadow: var(--shadow);
+}
+
+.lightbox-toolbar,
+.lightbox-actions,
+.lightbox-stage {
+    display: flex;
+    align-items: center;
+}
+
+.lightbox-toolbar {
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.lightbox-actions {
+    gap: 0.75rem;
+}
+
+.lightbox-counter,
+.lightbox-caption {
+    margin: 0;
+    color: var(--muted);
+}
+
+.lightbox-stage {
+    gap: 1rem;
+    justify-content: center;
+}
+
+.lightbox-image-frame {
+    flex: 1;
+    min-height: 60vh;
+    max-height: 78vh;
+    overflow: auto;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-md);
+    background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 72%),
+        rgba(8, 6, 14, 0.98);
+}
+
+.lightbox-display-image {
+    max-width: 100%;
+    max-height: 76vh;
+    object-fit: contain;
+    transition: transform 260ms ease;
+    cursor: zoom-in;
+}
+
+.lightbox-image-frame.is-zoomed {
+    justify-content: start;
+    align-items: start;
+    padding: 1rem;
+}
+
+.lightbox-display-image.is-zoomed {
+    max-width: none;
+    max-height: none;
+    width: auto;
+    height: auto;
+    transform: scale(1.6);
+    transform-origin: center center;
+    cursor: zoom-out;
+}
+
+.lightbox-button,
+.lightbox-nav {
+    flex: 0 0 auto;
+}
+
+.lightbox-nav {
+    min-width: 4.2rem;
 }
 
 .profiles-grid {
@@ -986,6 +1098,15 @@ button {
     .panel {
         padding: 1.2rem;
     }
+
+    .lightbox-stage {
+        flex-direction: column;
+    }
+
+    .lightbox-image-frame {
+        width: 100%;
+        min-height: 50vh;
+    }
 }
 
 @media (max-width: 520px) {
@@ -1034,6 +1155,20 @@ button {
     .pill-two,
     .pill-three {
         display: none;
+    }
+
+    .lightbox-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .lightbox-actions {
+        width: 100%;
+    }
+
+    .lightbox-button,
+    .lightbox-nav {
+        width: 100%;
     }
 }
 

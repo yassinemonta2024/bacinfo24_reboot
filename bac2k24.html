@@ -73,47 +73,47 @@
                 <div class="carousel-viewport">
                     <div class="carousel-track" data-carousel-track>
                         <figure class="carousel-slide is-active">
-                            <img src="source/IMG-20240404-WA0095.jpg" alt="Bac Info class photo 1">
+                            <img class="lightbox-image" src="source/IMG-20240404-WA0095.jpg" alt="Bac Info class photo 1">
                             <figcaption>One class, one afternoon, one memory frozen in time.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240405-WA0125.jpg" alt="Bac Info class photo 2">
+                            <img class="lightbox-image" src="source/IMG-20240405-WA0125.jpg" alt="Bac Info class photo 2">
                             <figcaption>The kind of moment that feels louder every year you look back at it.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240404-WA0146.jpg" alt="Bac Info class photo 3">
+                            <img class="lightbox-image" src="source/IMG-20240404-WA0146.jpg" alt="Bac Info class photo 3">
                             <figcaption>Faces, light, and the energy of the class together.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240405-WA0074.jpg" alt="Bac Info class photo 4">
+                            <img class="lightbox-image" src="source/IMG-20240405-WA0074.jpg" alt="Bac Info class photo 4">
                             <figcaption>Small details that instantly bring the day back.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240405-WA0070.jpg" alt="Bac Info class photo 5">
+                            <img class="lightbox-image" src="source/IMG-20240405-WA0070.jpg" alt="Bac Info class photo 5">
                             <figcaption>Another frame from the same story.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240405-WA0027.jpg" alt="Bac Info class photo 6">
+                            <img class="lightbox-image" src="source/IMG-20240405-WA0027.jpg" alt="Bac Info class photo 6">
                             <figcaption>Friends, gestures, and all the little expressions in between.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/WhatsApp Image 2024-04-06 at 9.05.44 PM.jpeg" alt="Bac Info class photo 7">
+                            <img class="lightbox-image" src="source/WhatsApp Image 2024-04-06 at 9.05.44 PM.jpeg" alt="Bac Info class photo 7">
                             <figcaption>Portrait memories deserve the full frame too.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240404-WA0303.jpg" alt="Bac Info class photo 8">
+                            <img class="lightbox-image" src="source/IMG-20240404-WA0303.jpg" alt="Bac Info class photo 8">
                             <figcaption>A candid moment from the class timeline.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240404-WA0201.jpg" alt="Bac Info class photo 9">
+                            <img class="lightbox-image" src="source/IMG-20240404-WA0201.jpg" alt="Bac Info class photo 9">
                             <figcaption>Every frame carries a different part of the year.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240404-WA0220.jpg" alt="Bac Info class photo 10">
+                            <img class="lightbox-image" src="source/IMG-20240404-WA0220.jpg" alt="Bac Info class photo 10">
                             <figcaption>The atmosphere, the crowd, the feeling of being there.</figcaption>
                         </figure>
                         <figure class="carousel-slide">
-                            <img src="source/IMG-20240404-WA0309.jpg" alt="Bac Info class photo 11">
+                            <img class="lightbox-image" src="source/IMG-20240404-WA0309.jpg" alt="Bac Info class photo 11">
                             <figcaption>One last look before diving into the personal pages.</figcaption>
                         </figure>
                     </div>
@@ -142,14 +142,14 @@
 
             <div class="photo-wall">
                 <article class="photo-wall-card">
-                    <img src="source/classe.jpg" alt="Class group frame">
+                    <img class="lightbox-image" src="source/classe.jpg" alt="Class group frame">
                     <div>
                         <p class="photo-wall-label">Class frame</p>
                         <p>The group, the energy, the memory.</p>
                     </div>
                 </article>
                 <article class="photo-wall-card">
-                    <img src="source/IMG-20240404-WA0032.jpg" alt="Bac Info highlight photo">
+                    <img class="lightbox-image" src="source/IMG-20240404-WA0032.jpg" alt="Bac Info highlight photo">
                     <div>
                         <p class="photo-wall-label">Highlight</p>
                         <p>A closer memory from the same year.</p>
@@ -203,6 +203,27 @@
             </ol>
         </section>
     </main>
+
+    <div class="lightbox" hidden data-lightbox aria-hidden="true">
+        <div class="lightbox-backdrop" data-lightbox-close></div>
+        <div class="lightbox-shell" role="dialog" aria-modal="true" aria-label="Photo viewer">
+            <div class="lightbox-toolbar">
+                <p class="lightbox-counter" data-lightbox-counter>1 / 1</p>
+                <div class="lightbox-actions">
+                    <button class="icon-button lightbox-button" type="button" data-lightbox-zoom aria-label="Zoom image">Zoom</button>
+                    <button class="icon-button lightbox-button" type="button" data-lightbox-close aria-label="Close viewer">Close</button>
+                </div>
+            </div>
+            <div class="lightbox-stage">
+                <button class="icon-button lightbox-nav" type="button" data-lightbox-prev aria-label="Previous image">Prev</button>
+                <div class="lightbox-image-frame" data-lightbox-frame>
+                    <img class="lightbox-display-image" data-lightbox-image src="" alt="">
+                </div>
+                <button class="icon-button lightbox-nav" type="button" data-lightbox-next aria-label="Next image">Next</button>
+            </div>
+            <p class="lightbox-caption" data-lightbox-caption></p>
+        </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -379,6 +400,122 @@
                     }
                 });
             });
+
+            var lightbox = document.querySelector("[data-lightbox]");
+            if (lightbox) {
+                var lightboxFrame = lightbox.querySelector("[data-lightbox-frame]");
+                var lightboxImage = lightbox.querySelector("[data-lightbox-image]");
+                var lightboxCaption = lightbox.querySelector("[data-lightbox-caption]");
+                var lightboxCounter = lightbox.querySelector("[data-lightbox-counter]");
+                var lightboxZoom = lightbox.querySelector("[data-lightbox-zoom]");
+                var lightboxPrev = lightbox.querySelector("[data-lightbox-prev]");
+                var lightboxNext = lightbox.querySelector("[data-lightbox-next]");
+                var lightboxOpeners = Array.prototype.slice.call(document.querySelectorAll(".lightbox-image"));
+                var lightboxIndex = 0;
+                var lightboxZoomed = false;
+
+                function getCaption(image) {
+                    var figure = image.closest("figure");
+                    if (figure) {
+                        var caption = figure.querySelector("figcaption");
+                        if (caption) {
+                            return caption.textContent.trim();
+                        }
+                    }
+
+                    var wallCard = image.closest(".photo-wall-card");
+                    if (wallCard) {
+                        var wallText = wallCard.querySelector(".photo-wall-label");
+                        if (wallText) {
+                            return wallText.textContent.trim();
+                        }
+                    }
+
+                    return image.alt || "";
+                }
+
+                function setZoomState(nextZoomState) {
+                    lightboxZoomed = nextZoomState;
+                    lightboxFrame.classList.toggle("is-zoomed", lightboxZoomed);
+                    lightboxImage.classList.toggle("is-zoomed", lightboxZoomed);
+                    lightboxZoom.textContent = lightboxZoomed ? "Fit" : "Zoom";
+                }
+
+                function renderLightbox(index) {
+                    var image = lightboxOpeners[(index + lightboxOpeners.length) % lightboxOpeners.length];
+                    lightboxIndex = lightboxOpeners.indexOf(image);
+                    lightboxImage.src = image.currentSrc || image.src;
+                    lightboxImage.alt = image.alt;
+                    lightboxCaption.textContent = getCaption(image);
+                    lightboxCounter.textContent = (lightboxIndex + 1) + " / " + lightboxOpeners.length;
+                    setZoomState(false);
+                }
+
+                function openLightbox(index) {
+                    renderLightbox(index);
+                    lightbox.hidden = false;
+                    lightbox.setAttribute("aria-hidden", "false");
+                    document.body.classList.add("lightbox-open");
+                }
+
+                function closeLightbox() {
+                    lightbox.hidden = true;
+                    lightbox.setAttribute("aria-hidden", "true");
+                    document.body.classList.remove("lightbox-open");
+                    setZoomState(false);
+                }
+
+                lightboxOpeners.forEach(function (image, index) {
+                    image.setAttribute("tabindex", "0");
+                    image.setAttribute("role", "button");
+                    image.setAttribute("aria-label", "Open photo " + (index + 1));
+
+                    image.addEventListener("click", function () {
+                        openLightbox(index);
+                    });
+
+                    image.addEventListener("keydown", function (event) {
+                        if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            openLightbox(index);
+                        }
+                    });
+                });
+
+                lightboxPrev.addEventListener("click", function () {
+                    renderLightbox(lightboxIndex - 1);
+                });
+
+                lightboxNext.addEventListener("click", function () {
+                    renderLightbox(lightboxIndex + 1);
+                });
+
+                lightboxZoom.addEventListener("click", function () {
+                    setZoomState(!lightboxZoomed);
+                });
+
+                lightboxImage.addEventListener("click", function () {
+                    setZoomState(!lightboxZoomed);
+                });
+
+                lightbox.querySelectorAll("[data-lightbox-close]").forEach(function (element) {
+                    element.addEventListener("click", closeLightbox);
+                });
+
+                document.addEventListener("keydown", function (event) {
+                    if (lightbox.hidden) {
+                        return;
+                    }
+
+                    if (event.key === "Escape") {
+                        closeLightbox();
+                    } else if (event.key === "ArrowLeft") {
+                        renderLightbox(lightboxIndex - 1);
+                    } else if (event.key === "ArrowRight") {
+                        renderLightbox(lightboxIndex + 1);
+                    }
+                });
+            }
         });
     </script>
     <script src="audio-sync.js"></script>
